@@ -25,13 +25,13 @@ public class Student {
     // One-to-One mapping with Basic Info
     @OneToOne(mappedBy = "student", cascade = CascadeType.ALL)
     private StudentBasicInfo basicInfo;
-//
-//    @OneToOne(mappedBy = "student", cascade = CascadeType.ALL)
-//    private StudentAddress address;
-//
-//    @OneToOne(mappedBy = "student", cascade = CascadeType.ALL)
-//    private StudentAcademicInfo academicInfo;
-//
-//    @OneToOne(mappedBy = "student", cascade = CascadeType.ALL)
-//    private StudentGuardianInfo guardianInfo;
+
+    @OneToOne(mappedBy = "student", cascade = CascadeType.ALL)
+    private StudentAddress address;
+
+    @OneToOne(mappedBy = "student", cascade = CascadeType.ALL)
+    private StudentAcademicInfo academicInfo;
+
+    @OneToOne(mappedBy = "student", cascade = CascadeType.ALL)
+     private StudentGuardianInfo guardianInfo;
 }
