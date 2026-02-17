@@ -1,10 +1,10 @@
 package com.app.student.management.dto;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter
-@Setter
+@Data
 public class StudentAddressDTO {
     private String addressLine1;
     private String addressLine2;

@@ -1,12 +1,9 @@
 package com.app.student.management.dto;
 
-import com.app.student.management.entity.StudentAcademicInfo;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 @Data
-public class StudentDetailsResponseDTO {
+public class StudentDetailsRequestDTO {
     private StudentDTO student;
     private StudentAcademicInfoDTO academic;
     private StudentAddressDTO address;
