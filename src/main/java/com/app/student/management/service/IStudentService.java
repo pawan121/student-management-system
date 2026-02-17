@@ -8,4 +8,5 @@ public interface IStudentService {
     public StudentDetailsResponseDTO getStudentDetails(String studentId);
     public Long getStudentCount();
     public String saveStudentDetails(StudentDetailsRequestDTO request);
+
 }

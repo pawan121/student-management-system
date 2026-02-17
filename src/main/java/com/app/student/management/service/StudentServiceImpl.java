@@ -17,6 +17,7 @@ public class StudentServiceImpl implements IStudentService {
         // ================= Student DTO =================
         StudentDTO studentDTO = new StudentDTO();
         studentDTO.setStudentId(student.getStudentId());
+        studentDTO.setStatus(student.getStatus());
         studentDTO.setFirstName(student.getBasicInfo().getFirstName());
         studentDTO.setLastName(student.getBasicInfo().getLastName());
         studentDTO.setGender(student.getBasicInfo().getGender());
