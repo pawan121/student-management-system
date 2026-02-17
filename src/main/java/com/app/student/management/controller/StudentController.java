@@ -2,7 +2,7 @@ package com.app.student.management.controller;
 
 import java.util.List;
 
-import com.app.student.management.dto.StudentDTO;
+import com.app.student.management.dto.StudentDetailsResponseDTO;
 import com.app.student.management.service.StudentServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -14,14 +14,14 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.app.student.management.entity.Student;
-import com.app.student.management.repository.StudentRepo;
+import com.app.student.management.repository.IStudentRepository;
 
 @RestController
 @CrossOrigin(origins = "*")
 public class StudentController {
 
 	@Autowired
-	private StudentRepo studentRepo;
+	private IStudentRepository studentRepo;
 
     @Autowired
     private StudentServiceImpl studentService;
@@ -39,7 +39,7 @@ public class StudentController {
 	}
 	
 	@GetMapping("student/{sId}")
-	public StudentDTO getStudentById(@PathVariable("sId") String sId) {
+	public StudentDetailsResponseDTO getStudentById(@PathVariable("sId") String sId) {
 		return studentService.getStudentDetails(sId);
 	}
 	

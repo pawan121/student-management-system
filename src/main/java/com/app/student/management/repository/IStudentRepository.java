@@ -8,9 +8,12 @@ import com.app.student.management.entity.Student;
 import java.util.Optional;
 
 @Repository
-public interface StudentRepo extends JpaRepository<Student,Integer>{
+public interface IStudentRepository extends JpaRepository<Student,Integer>{
 
     Optional<Student> findByStudentId(String studentId);
-	
-	
-}
+
+    }
+
+
+
+
