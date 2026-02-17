@@ -15,8 +15,9 @@ public class StudentController {
 	private IStudentService student;
 
 	@PostMapping("/student")
-	public Student addStudent(@RequestBody StudentDetailsRequestDTO request) {
-		return student.saveStudentDetails(request);
+	public String addStudent(@RequestBody StudentDetailsRequestDTO request) {
+		String msg = student.saveStudentDetails(request);
+		return msg;
 	}
 
 	/*@GetMapping("/student")

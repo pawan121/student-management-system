@@ -7,5 +7,5 @@ import com.app.student.management.entity.Student;
 public interface IStudentService {
     public StudentDetailsResponseDTO getStudentDetails(String studentId);
     public Long getStudentCount();
-    public Student saveStudentDetails(StudentDetailsRequestDTO request);
+    public String saveStudentDetails(StudentDetailsRequestDTO request);
 }

@@ -79,7 +79,7 @@ public class StudentServiceImpl implements IStudentService {
     }
 
     @Override
-    public Student saveStudentDetails(StudentDetailsRequestDTO request) {
+    public String saveStudentDetails(StudentDetailsRequestDTO request) {
         // Create Student entity
         Student student = new Student();
          student.setStudentId(request.getStudent().getStudentId());
@@ -129,7 +129,8 @@ public class StudentServiceImpl implements IStudentService {
             student.setGuardianInfo(guardian);
         }
 
-        return studentRepo.save(student);
+        Student save = studentRepo.save(student);
+        return "Student details has been saved " + student.getStudentId();
     }
 
 }
