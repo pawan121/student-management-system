@@ -2,6 +2,7 @@ package com.app.student.management.service;
 
 import com.app.student.management.dto.*;
 import com.app.student.management.entity.*;
+import com.app.student.management.exception.StudentNotFoundException;
 import com.app.student.management.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,7 +16,7 @@ public class StudentServiceImpl implements IStudentService {
 
     public StudentDTO getStudentDetails(String studentId) {
         Student student = studentRepo.findByStudentId(studentId)
-                .orElseThrow(() -> new RuntimeException("Student not found"));
+                .orElseThrow(() -> new StudentNotFoundException("Student Not Found With Student_Id " + studentId));
 
         StudentDTO dto = new StudentDTO();
 
