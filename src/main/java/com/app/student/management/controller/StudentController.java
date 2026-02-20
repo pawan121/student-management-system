@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 @RestController
 @CrossOrigin(origins = "*")
+@RequestMapping("/student")
 public class StudentController {
 
 	@Autowired
@@ -16,7 +17,7 @@ public class StudentController {
 	@Autowired
 	private StudentRepository studentRepo;
 
-	@GetMapping("/student")
+	@GetMapping
 	public List<Student> getAllStudent() {
 		return studentRepo.findAll();
 	}
@@ -26,12 +27,12 @@ public class StudentController {
 		return studentService.getStudentDetails(sId);
 	}
 
-	@GetMapping("/student/count")
+	@GetMapping("/count")
 	public Long getNoOfStudentRecords(){
         return studentService.getStudentCount();
 	}
 	
-	@DeleteMapping("/student/{sId}")
+	@DeleteMapping("/{sId}")
 	public void deleteStudent(@PathVariable("sId") int sId) {
 	    studentRepo.deleteById(sId);
 	}

@@ -63,6 +63,7 @@ public class StudentServiceImpl implements IStudentService {
 
     @Override
     public Long getStudentCount() {
+
         return studentRepo.GetTotalStudentsRecord();
     }
 
